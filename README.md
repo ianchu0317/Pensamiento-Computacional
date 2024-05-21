@@ -32,6 +32,7 @@ Se aceptan las sintaxis de Python y C para realizar comentarios.
 - puedeMover(dirección)
 - IrAlBorde(dirección)
 - VaciarTablero()
+- hayBolitas(color)
 - nroBolitas(color)
 - Poner(color)
 - Sacar(color)
