@@ -12,14 +12,6 @@ De aprendizaje encontré una documentación muy resumida de Gobstones (no oficia
 ---
 
 # Sintaxis básica
-Tabla de contenidos
-- [Comentarios](#Comentarios)
-- Primitivas
-- Variables
-- Operaciones
-- Condicionales
-- Bucles
-- Funciones y Procesos
 
 ## Comentarios
 Se aceptan las sintaxis de Python y C para realizar comentarios.
