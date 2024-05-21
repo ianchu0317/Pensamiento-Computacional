@@ -1,0 +1,53 @@
+// Programa principal
+program{
+
+    Avanzar(Norte, 3)
+    Avanzar(Este, 4)
+    Avanzar(Sur, 3)
+    Avanzar(Oeste, 4)
+
+}
+
+// Sacar bolitas en casilla actual
+procedure SacarBola(color, cantidad){
+    repeat(cantidad){
+        Sacar(color)
+    }
+}
+
+// Poner bolas en casiila actual
+procedure PonerBola(color, cantidad){
+    repeat(cantidad){
+        Poner(color)
+    }
+}
+
+/* Avanzar fila o columna especificando direccion 
+    y casillero total de la pelota a mover */
+procedure Avanzar(direccion, casilleros){
+    repeat(casilleros){
+        // Sacar bolas
+        // Bola verde
+        SacarBola(Verde, 3)
+        // Bola negra
+        if (direccion == Este || direccion == Sur || direccion == Oeste){
+            SacarBola(Negro, 1)
+        }
+        // Bola roja
+        if (direccion == Sur || direccion == Oeste){
+            SacarBola(Rojo, 1)
+        }
+        
+        // Mover casilla
+        Mover(direccion)
+        
+        // Poner bolas
+        PonerBola(Verde, 3)
+        if (direccion == Este || direccion == Sur || direccion == Oeste){
+            PonerBola(Negro, 1)
+        }
+        if (direccion == Sur || direccion == Oeste){
+            PonerBola(Rojo, 1)
+        }
+    }
+}
