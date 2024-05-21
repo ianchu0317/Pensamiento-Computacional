@@ -2,7 +2,7 @@
 
 Ejercicios de Gobstones para pensamiento computacional, sexto año del Colegio Nacional de Buenos Aires (CNBA). 
 
-De aprendizaje encontré una documentación muy resumida de Gobstones (no oficial) que se encuentra publicada por [Facultad de Informática - Universidad Nacional de La Plata](https://sedici.unlp.edu.ar/bitstream/handle/10915/63353/Documento_completo.pdf-PDFA.pdf).
+De aprendizaje encontré una documentación muy resumida de Gobstones (no oficial) que se encuentra publicada por [Facultad de Informática - Universidad Nacional de La Plata](https://sedici.unlp.edu.ar/bitstream/handle/10915/63353/Documento_completo.pdf-PDFA.pdf?sequence=1&isAllowed=y).
 
 ### **Links Oficiales**:
 - [Página Oficial](https://gobstones.github.io/)
@@ -32,6 +32,7 @@ Se aceptan las sintaxis de Python y C para realizar comentarios.
 - puedeMover(dirección)
 - IrAlBorde(dirección)
 - VaciarTablero()
+- hayBolitas(color)
 - nroBolitas(color)
 - Poner(color)
 - Sacar(color)
