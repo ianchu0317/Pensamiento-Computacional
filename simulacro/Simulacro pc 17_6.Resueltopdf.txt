@@ -1,0 +1,102 @@
+1) Resolucion:
+
+Hay acciones que se repiten y se escriben varias veces en lugar de usar el repeat. Esto hace que el programa sea mucho mas largo y confuso. 
+En lugar de tomar la cantidad de bolitas de la celda anterior como un parametro, se crean distintos procedimientos por separado para 4 , 8 , 16 bolitas etc. Esto hace que el codigo sea mas complicado innecesariamente.
+Los nombres describen del todo correctamente. Los procedimientos deben llevar nombres de acciones porque realizan acciones sobre el tablero. Deberian llamarse Poner16BolitasRojas(), etc. Sino describen un estado y se pueden confundir con una funcion.
+
+procedure PonerNBolitasRojas(n){
+repeat(n){
+Poner(Rojo)
+}
+}
+procedure AvanzarPoniendoElDobleDeBolitas(){
+repeat(4){
+cant := nroBolitas(Rojo)
+cant_doble := 2*cant
+Mover(Este)
+PonerNBolitasRojas(cant_doble)
+}
+}
+
+program {
+AvanzarPoniendoElDobleDeBolitas()
+}
+
+
+Es importante escribirlo asi para que el codigo pueda ser utilizado y comprendido por otras personas. Tambien sirve para que uno mismo pueda reutilizarlo en el futuro, y en el caso de haber una falla, identificar mas facilmente donde esta. Ademas, al tener los procedimientos separados y simplificados se puede generalizar para aplicarlo a otros problemas mas facilmente.
+
+
+
+2) Resolucion:
+program {
+    ApagarIncendios()
+    Volver()
+}
+
+procedure Volver(){
+    while (puedeMover(Oeste)){
+        MoverBomberoEnDireccion(Oeste)
+    }
+}
+
+procedure ApagarIncendios(){
+    while(puedeMover(Este)){
+    	IrAIncendioMasCercano()
+    	ApagarIncendio()
+    }
+}
+
+procedure MoverBomberoEnDireccion(direccion){
+    Sacar(Negro)
+    Mover(direccion)
+    Poner(Negro)
+}
+
+procedure IrAIncendioMasCercano(){
+    while (not(hayFuego())){
+        MoverBomberoEnDireccion(Este)
+    }
+}
+
+function hayFuego(){
+    return (hayBolitas(Rojo))
+}
+
+procedure ApagarIncendio(){
+    cant_fuego := nroBolitas(Rojo)
+    IrACargarAguaYVolver(cant_fuego)
+    repeat(cant_fuego){
+        ApagarFuego()
+    }
+}
+
+procedure IrACargarAguaYVolver(cant_agua){
+    while (puedeMover(Oeste)){
+        MoverBomberoEnDireccion(Oeste)
+    }
+    while (not (hayFuego())){
+        MoverBomberoConAguaEnDireccion(cant_agua,Este)
+    }
+}
+
+procedure ApagarFuego(){
+    Sacar(Azul)
+    Sacar(Rojo)
+}
+
+procedure MoverBomberoConAguaEnDireccion(cant_agua,direccion){
+    repeat(cant_agua){
+        Sacar(Azul)
+    }
+    Sacar(Negro)
+    Mover(direccion)
+    Poner(Negro)
+    repeat(cant_agua){
+        Poner(Azul)
+    }
+}
+
+3) a. Verdadero.
+b. Falso. La pre y post condición definen qué hay que hacer, pero no cómo.
+c. Falso. El modelado del problema se realiza independientemente de su representación y del lenguaje de programación. Es un paso previo a estas etapas, y se escribe en el "lenguaje del problema". Debe valer en general más allá de la representación y lenguaje que se usen.
+d. Verdadero.
