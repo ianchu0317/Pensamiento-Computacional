@@ -1,0 +1,13 @@
+- La pre y la postcondición de un problema son predicados lógicos que
+describen el estado inicial y final antes y después de ejecutar un programa. → Verdadero
+
+- La pre y la postcondición dan información acerca de cómo hay que resolver
+el problema. → Falso. Dan estado inicial y final pero no indica la técnica de resolución o el algoritmo a aplicar. 
+
+- Para modelar un problema debe aclararse en qué lenguaje de programación
+se implementará su solución, ya que el modelado depende de la
+representación que se use. → Falso. El uso del lenguaje (programar en sí) es representación. El modelado es en el lenguaje coloquial, como "lenguaje del problema".
+
+- El uso de parámetros es útil cuando un procedimiento aparece repetido
+muchas veces para distintos valores. Permite crear un solo procedimiento
+general que recibe el parámetro como argumento. → Verdadero
